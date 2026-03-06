@@ -1,32 +1,59 @@
 {
   "expo": {
-    "name": "CuervoBus",
-    "slug": "CuervoBus",
+    "name": "MobiBus",
+    "slug": "MoviBus",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "cuervobus",
+    "icon": "./assets/images/MobiBuss.png",
+    "scheme": "movibus",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
+
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tudominio.mobibus"
+    },
+
     "android": {
+      "package": "com.tudominio.mobibus",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/images/MobiBuss.png",
+        "backgroundImage": "./assets/images/MobiBuss.png",
+        "monochromeImage": "./assets/images/MobiBuss.png"
       },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
+
     "web": {
+      "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/MobiBuss.png"
     },
+
     "plugins": [
       "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permitir a MobiBus usar tu ubicación para ver el autobús en tiempo real."
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -40,6 +67,7 @@
         }
       ]
     ],
+
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
